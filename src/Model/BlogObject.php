@@ -21,11 +21,11 @@ use SilverStripe\View\Parsers\URLSegmentFilter;
 trait BlogObject
 {
     /**
-     * @return ManyManyList|BlogPost[]
+     * @return DataList
      */
-    public function BlogPosts()
+    public function BlogPosts($id = null)
     {
-        $blogPosts = parent::BlogPosts();
+        $blogPosts = parent::BlogPosts($id);
 
         $this->extend('updateGetBlogPosts', $blogPosts);
 
